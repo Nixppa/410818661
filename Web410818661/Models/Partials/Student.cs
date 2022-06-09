@@ -19,7 +19,7 @@ namespace Web410818661.Models
         [Display(Name = "姓名")]
         [StringLength(5, MinimumLength=2, ErrorMessage ="請輸入2~5個字")] 
 
-        public string name { get; set; }
+        public string Username { get; set; }
 
         [Required(ErrorMessage = "請填寫學號")]
         [Display(Name = "學號")]
@@ -30,5 +30,9 @@ namespace Web410818661.Models
         [Display(Name = "Eamil")]
         [EmailAddress]
         public string Eamil { get; set; }
+
+        [Required(ErrorMessage = "必填欄位")]
+        [Display(Name = "是否註冊")]
+        public bool IsAcitve { get; set; }
     }
 }

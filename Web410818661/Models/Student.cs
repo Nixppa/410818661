@@ -15,8 +15,9 @@ namespace Web410818661.Models
     public partial class Student
     {
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Username { get; set; }
         public string Number { get; set; }
         public string Eamil { get; set; }
+        public bool IsAcitve { get; set; }
     }
 }

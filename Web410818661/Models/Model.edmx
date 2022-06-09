@@ -4,36 +4,37 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbs10818661Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbs10818661Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="10" />
-          <Property Name="Number" Type="nchar" MaxLength="10" />
-          <Property Name="Eamil" Type="nchar" MaxLength="50" />
+          <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Number" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Eamil" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsAcitve" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="dbs10818661ModelStoreContainer">
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbs10818661Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="dbs10818661Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Student" EntityType="dbs10818661Model.Student" />
+        </EntityContainer>
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Eamil" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Eamil" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="IsAcitve" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="dbs10818661Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Student" EntityType="Self.Student" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -43,10 +44,11 @@
           <EntitySetMapping Name="Student">
             <EntityTypeMapping TypeName="dbs10818661Model.Student">
               <MappingFragment StoreEntitySet="Student">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="IsAcitve" ColumnName="IsAcitve" />
                 <ScalarProperty Name="Eamil" ColumnName="Eamil" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
