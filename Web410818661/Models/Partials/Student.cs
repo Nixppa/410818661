@@ -33,6 +33,6 @@ namespace Web410818661.Models
 
         [Required(ErrorMessage = "必填欄位")]
         [Display(Name = "是否註冊")]
-        public bool IsAcitve { get; set; }
+        public bool IsActive { get; set; }
     }
 }

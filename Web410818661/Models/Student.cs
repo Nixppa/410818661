@@ -18,6 +18,6 @@ namespace Web410818661.Models
         public string Username { get; set; }
         public string Number { get; set; }
         public string Eamil { get; set; }
-        public bool IsAcitve { get; set; }
+        public bool IsActive { get; set; }
     }
 }

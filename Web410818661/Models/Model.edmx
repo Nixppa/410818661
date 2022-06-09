@@ -13,7 +13,7 @@
           <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Number" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Eamil" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsAcitve" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="dbs10818661ModelStoreContainer">
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
@@ -33,7 +33,7 @@
           <Property Name="Username" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Number" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Eamil" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="IsAcitve" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -44,7 +44,7 @@
           <EntitySetMapping Name="Student">
             <EntityTypeMapping TypeName="dbs10818661Model.Student">
               <MappingFragment StoreEntitySet="Student">
-                <ScalarProperty Name="IsAcitve" ColumnName="IsAcitve" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Eamil" ColumnName="Eamil" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
